@@ -1,4 +1,4 @@
-module.exports.populationSize = 30;
-module.exports.maxGenerations = 50;
+module.exports.populationSize = 500;
+module.exports.maxGenerations = 1500;
 
-module.exports.mutationRate = 0.1;
+module.exports.mutationRate = 0.2;
