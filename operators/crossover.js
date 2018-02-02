@@ -1,14 +1,14 @@
 const CONST = require('../constants');
+const Random = require('../helpers/random');
 
 module.exports.default = (parent1, parent2) => {
-  const genome = [];
-  // combine the two genes evenly
-  for (let geneOrder = 0; geneOrder < parent1.genome.length; ++geneOrder) {
-    const gene = (Math.random() < 0.5) ?
-      parent1.genome[geneOrder] :
-      parent2.genome[geneOrder];
-    genome.push(gene);
-  }
+  // randomize the place to cut
+  const cut = Random.integer(0, parent1.length);
+  // combine the two genomes
+  const genome = Array.prototype.concat(
+    parent1.genome.slice(0, cut),
+    parent2.genome.slice(cut, parent2.genome.length)
+  );
   return {
     genome,
     fitness: CONST.FITNESS_UNKNOWN,

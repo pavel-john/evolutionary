@@ -83,14 +83,12 @@ const runEvolution = (problem) => {
   return bestIndividual;
 }
 
-//const bestFound = runEvolution(PicnicProblem);
-//console.log('Best solution found: ', bestFound.genome, ' has value:', bestFound.weight);
+const bestFound = runEvolution(PicnicProblem);
+console.log('Best solution found: ', bestFound.genome, ' has value:', bestFound.fitness);
 
+/*
 const readProblem = require('./problems/problemReader').readProblem;
 readProblem('./problems/low-dimensional/f2_l-d_kp_20_878')
   .then(problem => runEvolution(problem))
   .then(bestFound => console.log('Best solution found: ', bestFound.genome, ' has value:', bestFound.fitness));
-
-
-// tip: stopping condition based on fitness
-// tip: elitism
+*/
